@@ -4,7 +4,11 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# route hello
+@app.route("/")
+def index():
+    return "Project Porty"
+
+
 @app.route("/hello")
 def hello():
     return jsonify({"data" : "Hello, world"}), 200
